@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1">click</button>
+    <button id="btn2">click</button>
+<script>
+    var btn1=document.getElementById("btn1");
+    btn1.onclick=function(){
+        console.log(this)// btn1
+    };
+    var btn2=document.getElementById("btn2");
+    btn2.onclick=()=> {
+        console.log(this) //window
+    };
+    var a={};
+    a.fun = function(){
+        console.log(this)//a
+    };
+    a.fun1 = ()=>{
+        console.log(this)//window
+    };
+    setTimeout(()=>{
+        console.log(this)//window
+    })
+    setTimeout(function (){
+        console.log(this)//window
+    })
+    a.fun();
+    a.fun1();
+    function fo1(){
+        console.log(this)
+    };
+    var fo2 = () => {
+        console.log(this)
+    }
+    fo1();
+    fo2();
+</script>    
+</body>
+</html>
